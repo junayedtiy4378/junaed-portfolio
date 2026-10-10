@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#0a100c">
+  <title>Portfolio Studio — Junaed Ahmed</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <section id="login-view" class="login-shell" hidden>
+    <div class="login-ambient"></div>
+    <div class="login-card">
+      <div class="brand-row"><div class="brand-glyph">J<span>/</span>A.</div><span>PORTFOLIO <b>STUDIO</b></span></div>
+      <div class="login-icon">↗</div>
+      <p class="eyebrow">PRIVATE WORKSPACE / 001</p>
+      <h1>Welcome back,<br><em>Junaed.</em></h1>
+      <p class="login-sub">Manage your research, projects, skills, publications and website content—without touching code.</p>
+      <form id="login-form"><label for="admin-password">Admin password</label><input id="admin-password" name="password" type="password" autocomplete="current-password" required placeholder="Enter your admin password"><button class="btn primary full" type="submit" id="login-button">Access dashboard <span>↗</span></button></form>
+      <p id="login-error" class="error-text" role="alert" hidden></p>
+      <div class="login-foot"><span>SECURE / SERVER-AUTHENTICATED</span><a href="/">← Back to portfolio</a></div>
+    </div>
+  </section>
+  <div id="loading-view" class="loading-view"><div class="spinner"></div><p>Loading Portfolio Studio…</p></div>
+  <div id="admin-app" class="admin-app" hidden>
+    <aside class="sidebar" id="sidebar">
+      <a class="admin-brand" href="/"><span class="brand-glyph">J<span>/</span>A.</span><span>PORTFOLIO<small>CONTENT STUDIO</small></span></a>
+      <div class="nav-caption">WORKSPACE</div>
+      <nav id="admin-nav" aria-label="Admin dashboard navigation">
+        <button class="side-link selected" data-page="dashboard"><span class="side-icon">◈</span>Overview</button>
+        <button class="side-link" data-page="identity"><span class="side-icon">◎</span>Profile & social</button>
+        <button class="side-link" data-page="hero"><span class="side-icon">✳</span>Hero & about</button>
+        <button class="side-link" data-page="research"><span class="side-icon">⌁</span>Research</button>
+        <button class="side-link" data-page="projects"><span class="side-icon">▦</span>Projects <span class="nav-num" id="nav-project-count">4</span></button>
+        <button class="side-link" data-page="skills"><span class="side-icon">⚒</span>Skill groups</button>
+        <button class="side-link" data-page="courses"><span class="side-icon">▤</span>Education</button>
+        <button class="side-link" data-page="publications"><span class="side-icon">▣</span>Publications</button>
+        <button class="side-link" data-page="interests"><span class="side-icon">◇</span>Interests</button>
+        <button class="side-link" data-page="sections"><span class="side-icon">⊞</span>Custom sections</button>
+        <button class="side-link" data-page="media"><span class="side-icon">▧</span>Image library</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="site-chip"><span class="pulse-dot"></span><div>GITHUB CONNECTED<small>Auto-deploy on save</small></div></div><a class="site-link" href="/" target="_blank" rel="noopener">View live portfolio ↗</a><button class="logout" id="logout-btn">↪ Sign out</button></div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar"><div class="top-left"><button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">☰</button><span class="breadcrumb">WORKSPACE <span>/</span> <strong id="current-page">OVERVIEW</strong></span></div><div class="top-right"><span id="save-status" class="save-status">All changes saved</span><a class="btn secondary desktop-only" href="/" target="_blank" rel="noopener">Preview site ↗</a><button id="save-btn" class="btn primary" disabled>Publish changes <span>↗</span></button></div></header>
+      <main class="workspace"><div id="workspace-body"></div><footer class="admin-footer">J/A. PORTFOLIO STUDIO <span>✳</span> Built for a growing body of work.</footer></main>
+    </div>
+  </div>
+  <div class="modal-backdrop" id="modal-backdrop" hidden><div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-heading"><div class="modal-header"><div><p class="eyebrow" id="modal-kicker">EDITOR</p><h2 id="modal-heading">Edit entry</h2></div><button class="icon-button" id="modal-close" aria-label="Close editor">✕</button></div><form id="editor-form"><div id="editor-fields" class="editor-fields"></div><div class="modal-actions"><button type="button" class="btn secondary" id="modal-cancel">Cancel</button><button type="submit" class="btn primary">Apply changes <span>↗</span></button></div></form></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
